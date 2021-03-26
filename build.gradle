@@ -32,15 +32,23 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('com.h2database:h2') //inmemory db = 메모리상에 만들어지는 db
 
-    //머스타시
+    //mustache 사용을 위한 dependencies
     compile('org.springframework.boot:spring-boot-starter-mustache')
+    //spring security 를 위한 dependencies
+    compile('org.speingframework.boot:spring-boot-starter-oauth2-client')
 
+    //jdbc들
+    compile('org.springframework.session:spring-session-jdbc')
+    compile('org.mariadb.jdbc:mariadb-java-client')
+
+    //시큐리티 테스트
+    testCompile('org.springframework.security:spring-security-test')
+    //spring 웹 테스트
     testCompile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    //어노테이션 기동을 위한 dependencies
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
-
-//    testCompile('org.springframework.security:spring-security-test')
 }
 
 test {
