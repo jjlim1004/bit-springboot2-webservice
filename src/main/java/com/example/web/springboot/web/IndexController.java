@@ -2,6 +2,7 @@ package com.example.web.springboot.web;
 
 //import com.example.web.springboot.config.auth.LoginUser;
 //import com.example.web.springboot.config.auth.dto.SessionUser;
+import com.example.web.springboot.config.auth.dto.SessionUser;
 import com.example.web.springboot.domain.posts.PostsRepository;
 import com.example.web.springboot.serivce.PostsService;
 import com.example.web.springboot.web.dto.PostsResponseDto;
@@ -20,8 +21,11 @@ public class IndexController {
     PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model){//, @LoginUser SessionUser user){
+    public String index(Model model, SessionUser user){//, @LoginUser SessionUser user){
         model.addAttribute("posts",postsService.findAllDesc());
+        if(user!= null){
+            model.addAttribute("userName",user.getName());
+        }
         return "index"; //src/main/resources/templates/index.mustache
     }
 

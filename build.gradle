@@ -35,7 +35,8 @@ dependencies {
     //mustache 사용을 위한 dependencies
     compile('org.springframework.boot:spring-boot-starter-mustache')
     //spring security 를 위한 dependencies
-    compile('org.speingframework.boot:spring-boot-starter-oauth2-client')
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+    //시험삼아
 
     //jdbc들
     compile('org.springframework.session:spring-session-jdbc')
